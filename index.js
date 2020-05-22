@@ -52,5 +52,11 @@ inquirer
     },
   ])
   .then((answers) => {
-    console.info("Answer", answers);
+    let readme = $answers.question;
+    fs.writeFile("ReadMe.md", readme, (err) => {
+      if (err) return;
+      console.log(err);
+
+      console.log("File Created Successfully");
+    });
   });
